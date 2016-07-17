@@ -53,9 +53,9 @@ set rnu
 "specify the leader key
 let mapleader=" "
 
-"let j and k move across wrapped lines as expected
-nmap j gj
-nmap k gk
+"let j and k move across wrapped lines as expected if no count
+nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 
 "after character search: find next character
 nnoremap <leader>n ;
@@ -128,14 +128,15 @@ nnoremap <esc> :noh<return><esc>:<Backspace>
 "autowrite for vimwiki
 "nnoremap <leader>ww :set autowriteall
 
-"Return instead of : for commands
-nnoremap <cr> :
+"Return instead of : for commands except in vimwiki
+nmap <expr> <cr> (&autowriteall ? '<cr>' : ':')
+"nmap <cr> :
 nnoremap <leader>r <cr>
 "disable all blinking:
 set guicursor+=a:blinkon0
 
 "vim wiki follow create wiki link
-:nmap <Leader><cr> <Plug>VimwikiFollowLink
+":nmap <Leader><cr> <Plug>VimwikiFollowLink
 
 "deprecated:
 "notes folder
@@ -174,3 +175,10 @@ inoremap < <><Left>
 "jump to end of line while in insert mode
 inoremap <S-Tab> <C-o>$
 
+"function! g:LoadPluginScript ()
+"    " Tabularize {{{
+"    if exists(":Vimwiki")
+"        nnoremap <CR> :Vimwiki <Leader><CR>
+"    endif
+"    " }}}
+"endfunction
