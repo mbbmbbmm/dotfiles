@@ -130,21 +130,16 @@ nnoremap <esc> :noh<return><esc>:<Backspace>
 
 "Return instead of : for commands except in vimwiki
 nmap <expr> <cr> (&autowriteall ? '<cr>' : ':')
-"nmap <cr> :
+"alternative return
 nnoremap <leader>r <cr>
-"disable all blinking:
-set guicursor+=a:blinkon0
 
+"old
+"nmap <cr> :
 "vim wiki follow create wiki link
 ":nmap <Leader><cr> <Plug>VimwikiFollowLink
-
-"deprecated:
-"notes folder
-"let g:notes_directories = ['~/Documents/Notes','~/Documents/MEGA/MEGAsync/Notes']
-"search for tag under cursor
-"map <leader>t :SearchNotes<CR>
-"note from text
-"vmap <leader>t :NoteFromSelectedText<CR>
+"
+"disable all blinking:
+set guicursor+=a:blinkon0
 
 "mark all (visual)
 map <leader>a ggvG$ 
