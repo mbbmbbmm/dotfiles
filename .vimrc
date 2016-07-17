@@ -122,8 +122,8 @@ set ignorecase
 set smartcase
 "search highlighting on
 set hlsearch
-"clear it with esc
-nnoremap <esc> :noh<return><esc>
+"clear it with esc and mute feedback about it
+nnoremap <esc> :noh<return><esc>:<Backspace>
 
 "autowrite for vimwiki
 "nnoremap <leader>ww :set autowriteall
