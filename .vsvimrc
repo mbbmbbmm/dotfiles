@@ -73,6 +73,9 @@ nnoremap <S-k> :m .-2<CR>
 "vnoremap <S-j> :m '>+1<CR>
 "vnoremap <S-k> :m '<-2<CR>
 
+"easier to jump to mark
+nnoremap <leader>m '
+
 "edit .vimrc
 map <leader>ev :vsplit $MYVIMRC<cr>
 "source the .vimrc to see changes
@@ -132,14 +135,6 @@ set guicursor+=a:blinkon0
 "vim wiki follow create wiki link
 :nmap <Leader><cr> <Plug>VimwikiFollowLink
 
-"deprecated:
-"notes folder
-"let g:notes_directories = ['~/Documents/Notes','~/Documents/MEGA/MEGAsync/Notes']
-"search for tag under cursor
-"map <leader>t :SearchNotes<CR>
-"note from text
-"vmap <leader>t :NoteFromSelectedText<CR>
-
 "mark all (visual)
 map <leader>a ggvG$ 
 "copy selected to global buffer
@@ -157,9 +152,6 @@ set backspace=indent,eol,start
 
 "tab was to big
 set tabstop=4
-
-"autoexpanding {
-inoremap {<cr> <cr>{<cr>}<esc>O<tab>
 
 "close pointy bracket
 inoremap < <><Left>

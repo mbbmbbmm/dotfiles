@@ -72,6 +72,10 @@ vnoremap <S-k> :m '<-2<CR>gv=gv
 
 vnoremap <C-j> J
 
+"quicker mark jumping
+nnoremap <leader>m '
+
+
 "edit .vimrc
 map <leader>ev :vsplit $MYVIMRC<cr>
 "source the .vimrc to see changes
