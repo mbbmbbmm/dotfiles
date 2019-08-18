@@ -1,5 +1,5 @@
 "home directory
-cd C:/jan/text/tekste
+cd D:/Texte
 
 "pathogen, seems to be the best one, just clone in vimfiles/bundle
 execute pathogen#infect()
