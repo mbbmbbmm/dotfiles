@@ -1,7 +1,7 @@
 "home directory
 cd C:/jan/text/tekste
 
-"pathogen
+"pathogen, seems to be the best one, just clone in vimfiles/bundle
 execute pathogen#infect()
 
 "vimwiki double leader prefix to avoid conflict
