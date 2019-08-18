@@ -7,6 +7,8 @@ execute pathogen#infect()
 "vimwiki double leader prefix to avoid conflict
 "with window functions
 "let g:vimwiki_map_prefix = '<Leader><Leader>w'
+
+"vimwiki change leader w to leader v
 let g:vimwiki_map_prefix = '<Leader>v'
 
 "make like vim, not like vi
