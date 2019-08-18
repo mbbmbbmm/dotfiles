@@ -54,8 +54,11 @@ set rnu
 let mapleader=" "
 
 "let j and k move across wrapped lines as expected
-nmap j gj
-nmap k gk
+nnoremap j gj
+nnoremap k gk
+
+"search for visually highlighted text
+vnoremap // y/<C-R>"<CR>
 
 "after character search: find next character
 nnoremap <leader>n ;
@@ -93,6 +96,9 @@ map <leader><leader> :e#<CR>
 "cycle through buffers
 map <leader>b :bnext<CR>
 
+nnoremap <leader>h <c-w>h
+nnoremap <leader>l <c-w>l
+
 "open file
 map <leader>o :browse confirm edit<CR>
 
@@ -111,7 +117,7 @@ noremap <c-u> 3<c-u>
 noremap <c-d> 3<c-d>
 
 "keep n lines around cursor
-set so=6
+"set so=6
 
 "search highlight while typing
 set incsearch
@@ -135,10 +141,17 @@ set guicursor+=a:blinkon0
 "vim wiki follow create wiki link
 :nmap <Leader><cr> <Plug>VimwikiFollowLink
 
+inoremap <A-n> <C-w>
+
 "mark all (visual)
 map <leader>a ggvG$ 
 "copy selected to global buffer
 vmap <leader>c "*y
+
+nnoremap gh :vsc Window.NextDocumentLeft<CR>
+nnoremap gl :vsc Window.NextDocumentRight<CR>
+nnoremap gj :vsc Window.NextDocumentDown<CR>
+nnoremap gk :vsc Window.NextDocumentUp<CR>
 
 "quit
 map <leader>qu :q<CR>
@@ -153,8 +166,10 @@ set backspace=indent,eol,start
 "tab was to big
 set tabstop=4
 
-"close pointy bracket
-inoremap < <><Left>
+"close pointy bracket - gets annoying
+"inoremap < <><Left>
 "jump to end of line while in insert mode
-inoremap <S-Tab> <C-o>$
+inoremap <S-Tab> <C-o>$<Right>
+"word navigation in edit mode
+inoremap <C-Tab> <C-o>e<Right>
 
